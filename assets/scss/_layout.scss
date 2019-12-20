@@ -184,9 +184,17 @@ section.hero {
   }
 
   .download-link {
-    @include media(">xl") {
-      transform: scale(1.5);
-      transform-origin: left top;
+    a {
+      margin-right: 24px;
+    }
+    
+    img {
+      display: block;
+    }
+
+    &.ios .android,
+    &.android .ios {
+      display: none;
     }
   }
 }
