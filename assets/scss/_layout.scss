@@ -46,13 +46,11 @@ body {
 main {
   @include media("<md", "landscape") {
     padding-top: 160px;
+    padding-bottom: 80px;
   }
   @include media("<sm") {
-    padding-top: 160px;
-  }
-
-  @include media("<xs") {
     padding-top: 192px;
+    padding-bottom: 96px;
   }
 }
 
@@ -108,13 +106,16 @@ body > header {
 // 
 
 section.hero {
-  min-height: 100vh;
   background-color: transparent;
   position: relative;
   z-index: 10;
 
   display: flex;
   align-items: center;
+
+  @include media(">lg") {
+    min-height: 100vh;
+  }
   
   .row {
     margin-left: -$grid-gutter;
