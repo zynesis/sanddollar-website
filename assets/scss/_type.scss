@@ -1,0 +1,46 @@
+html {
+  font-size:  62.5%;
+  /* Smoothing */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-size: $body1-font-size;
+  font-weight: $body1-font-weight;
+  font-family: $base-font-family;
+  line-height: $body1-line-height;
+  letter-spacing: $body1-letter-spacing;
+  font-feature-settings: $base-font-features;
+  color: $color-ui-default;
+}
+
+a {
+  text-decoration: underline;
+  color: $color-ui-action;
+
+  &:hover {
+    color: $color-ui-light;
+  }
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+::selection {
+  background: $color-ui-medium;
+  color: $color-ui-white;
+}
+
+//
+// Headings
+//
+
+h1, .h1 { font-size: $h5-font-size; line-height: $h5-line-height; font-weight: $h5-font-weight; margin-bottom: $h5-margin-bottom; letter-spacing: $h5-letter-spacing; }
+h2, .h2 { font-size: $h6-font-size; line-height: $h6-line-height; font-weight: $h6-font-weight; margin-bottom: $h6-margin-bottom; letter-spacing: $h6-letter-spacing; }

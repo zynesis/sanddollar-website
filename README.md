@@ -1,2 +1,1 @@
-# sanddollar-website
-Sand Dollar app website
+# Sand Dollar website

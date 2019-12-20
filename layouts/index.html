@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="{{ $.Param "meta.description" }}">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+  <meta name="apple-itunes-app" content="app-id=1486710296" />
+  <title>{{ .Site.Params.title }} &ndash; {{ $.Param "long_title" }}</title>
+  {{ $style := resources.Get "scss/main.scss" | toCSS | postCSS | minify | fingerprint }}
+  <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="brand-logo">
+      {{ readFile "/static/svg/logos/sand-dollar-logo.svg" | safeHTML }}
+    </div>
+    <div class="brand-title">
+      <div class="h1">Sand Dollar</div>
+      <div class="tagline">{{ $.Param "content.sections.hero.headline" }}</div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="hero-text col col-lg-4">
+            <h1>{{ $.Param "content.sections.hero.headline" }}</h1>
+            <div class="download-link">
+              <a href="https://apps.apple.com/us/app/sand-dollar/id1486710296?mt=8"
+                style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-12-16&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:40px;" class="ios"></a>
+            </div>
+          </div>
+          <div class="hero-image-wrapper col col-lg-8">
+            <div class="hero-image">
+              <div class="hero-device">
+                <img src="img/hero-device.png" srcset="img/hero-device.png 1x, img/hero-device@2x.png 2x" alt="Background image">
+              </div>
+              <div class="hero-backgrounds">
+                <img src="img/hero-bg1.jpg" srcset="img/hero-bg1.jpg 1x, img/hero-bg1@2x.jpg 2x" alt="Background image">
+                <img src="img/hero-bg2.jpg" srcset="img/hero-bg2.jpg 1x, img/hero-bg2@2x.jpg 2x" alt="Background image">
+                <img src="img/hero-bg3.jpg" srcset="img/hero-bg3.jpg 1x, img/hero-bg3@2x.jpg 2x" alt="Background image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    {{ $.Param "content.sections.footer.copyright" }}
+    {{ readFile "/static/svg/logos/logo-nzia.svg" | safeHTML }}
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  {{ $slick := resources.Get "js/slick.min.js" }}
+  {{ $main := resources.Get "js/main.js" }}
+  {{ $js := slice $slick $main | resources.Concat "js/bundle.js" | resources.Fingerprint }}
+  <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
+  {{ template "_internal/google_analytics_async.html" . }}
+</body>
+
+</html>

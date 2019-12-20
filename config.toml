@@ -1,0 +1,17 @@
+baseURL = "https://nzia.io/"
+copyright = "All Rights Reserved"
+googleAnalytics = "UA-135427909-1"
+languageCode = "en-us"
+title = "NZIA"
+[blackfriday]
+
+DefaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "NZIA"
+    cta_label = "Get in touch"
+    cta_url = "#get-in-touch"
+    company_name = "NZIA"
+    weight = 3
