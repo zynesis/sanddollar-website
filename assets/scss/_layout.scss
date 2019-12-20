@@ -156,8 +156,8 @@ section.hero {
 
   .hero-image {
     position: relative;
-    width: 556px;
-    height: 444px;
+    width: 554px;
+    height: 442px;
 
     @include media("<sm") {
       transform: scale(0.8);
@@ -169,13 +169,16 @@ section.hero {
       transform: scale(1.5);
       transform-origin: center;
     }
+
+    img {
+      width: 554px;
+      height: 442px;
+    }
   }
 
   .hero-device {
     position: absolute;
     z-index: $zindex-sticky;
-    left: 2px;
-    top: 2px;
   }
 
   .hero-backgrounds {
